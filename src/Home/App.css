@@ -13,4 +13,10 @@
     text-decoration: none;
   }
   
- 
+  .card-body {
+    margin-bottom: 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+   
+  }
+  

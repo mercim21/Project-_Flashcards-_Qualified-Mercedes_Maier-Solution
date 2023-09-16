@@ -19,7 +19,7 @@ function DeckForm({
 
         <input
           type='text'
-          className='form-control'
+          className='deck-input' 
           id='name'
           name='name'
           value={deck.name}
