@@ -28,7 +28,7 @@ function DeckForm({
           maxLength='100'
           required
         />
-      </div>
+      
         <div className="form-control">
                 <label htmlFor="description">Description</label>
                 <textarea
@@ -40,13 +40,15 @@ function DeckForm({
                 onChange={handleChange}
                 value={deck.description}
                 ></textarea>
-            </div>
+            
+          
       <button className='btn btn-secondary' onClick={handleCancel}>
         Cancel
       </button>
       <button type='submit' className='btn btn-primary mx-2'>
         Submit
       </button>
+      </div> </div>
     </form>
   );
 }
