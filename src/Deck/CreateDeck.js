@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { createDeck } from "../utils/api/index";
 import DeckForm from './DeckForm';
 
-
 function CreateDeck() {
   const history = useHistory();
   const [deck, setDeck] = useState({ name: '', description: '' });
@@ -17,8 +16,8 @@ function CreateDeck() {
     event.preventDefault();
 
     try {
-      const response = await createDeck(deck);
-      history.push(`/decks/${newDeck.id}`);
+      const newDeck = await createDeck(deck); // Store the response in 'newDeck'
+      history.push(`/decks/${newDeck.id}`); // Redirect to the newly created deck
     } catch (error) {
       console.error('Error creating deck:', error);
     }

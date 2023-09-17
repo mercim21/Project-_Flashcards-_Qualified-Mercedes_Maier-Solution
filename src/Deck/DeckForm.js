@@ -4,9 +4,8 @@ function DeckForm({
   deck, 
   handleChange, 
   handleSubmit, 
-  handleCancel }) 
-{
-
+  handleCancel 
+}) {
   return (
     <form onSubmit={handleSubmit}>
       <div className='form-group'>
@@ -28,27 +27,28 @@ function DeckForm({
           maxLength='100'
           required
         />
+      </div> 
+
       
-        <div className="form-control">
-                <label htmlFor="description">Description</label>
-                <textarea
-                className="form-control"
-                id="description"
-                rows="3"
-                placeholder="Brief description of the deck"
-                required
-                onChange={handleChange}
-                value={deck.description}
-                ></textarea>
-            
-          
+      <div className="form-group">
+        <label htmlFor="description">Description</label>
+        <textarea
+          className="form-control"
+          id="description"
+          rows="3"
+          placeholder="Brief description of the deck"
+          required
+          onChange={handleChange}
+          value={deck.description}
+        ></textarea>
+      </div> 
+      
       <button className='btn btn-secondary' onClick={handleCancel}>
         Cancel
       </button>
       <button type='submit' className='btn btn-primary mx-2'>
         Submit
       </button>
-      </div> </div>
     </form>
   );
 }
