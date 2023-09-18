@@ -11,9 +11,7 @@ function DeckForm({
       <div className='form-group'>
         <label htmlFor='name' className='d-flex justify-content-between'>
           Name
-          {deck.name && deck.name.length > 0 && (
-            <small className='text-muted'>{deck.name.length}/100</small>
-          )}
+        
         </label>
 
         <input
@@ -35,11 +33,11 @@ function DeckForm({
         <textarea
           className="form-control"
           id="description"
+          name="description"
           rows="3"
           placeholder="Brief description of the deck"
-          required
-          onChange={handleChange}
           value={deck.description}
+          onChange={handleChange}
         ></textarea>
       </div> 
       
