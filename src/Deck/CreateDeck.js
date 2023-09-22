@@ -43,15 +43,44 @@ function CreateDeck() {
       </nav>
       <div className='card'>
         <div className='card-body'>
-          <h5 className='card-title'>Create Deck</h5>
-          <DeckForm
-            deck={deck}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            handleCancel={handleCancel}
+        <h2>Create Deck</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            name="name"
+            value={deck.name}
+            onChange={handleChange}
+            required
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="description">Description</label>
+          <textarea
+            className="form-control"
+            id="description"
+            name="description"
+            value={deck.description}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Create
+        </button>
+        <button
+          type="button"
+          className="btn btn-secondary ml-2"
+          onClick={handleCancel}
+        >
+          Cancel
+        </button>
+        /</form>
       </div>
+    </div>
     </div>
   );
 }
