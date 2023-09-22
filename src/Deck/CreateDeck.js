@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { createDeck } from "../utils/api/index";
-import DeckForm from './DeckForm';
 
 function CreateDeck() {
   const history = useHistory();
-  const [deck, setDeck] = useState({ name: '', description: '' });
+  const [deck, setDeck] = useState({ name: "", description: "" });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -14,36 +13,28 @@ function CreateDeck() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const newDeck = await createDeck(deck); // Store the response in 'newDeck'
-      history.push(`/decks/${newDeck.id}`); // Redirect to the newly created deck
+      const newDeck = await createDeck(deck);
+      history.push(`/decks/${newDeck.id}`);
     } catch (error) {
-      console.error('Error creating deck:', error);
+      console.error("Error creating deck:", error);
     }
-  };
-
-  const handleCancel = () => {
-    history.push('/');
   };
 
   return (
     <div>
-      <nav aria-label='breadcrumb'>
-        <ol className='breadcrumb'>
-          <li className='breadcrumb-item'>
-            <Link to='/' className='text-decoration-none'>
-              <i className='fa-solid fa-house' /> Home
-            </Link>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <a href="/">Home</a>
           </li>
-          <li className='breadcrumb-item active' aria-current='page'>
+          <li className="breadcrumb-item active" aria-current="page">
             Create Deck
           </li>
         </ol>
       </nav>
-      <div className='card'>
-        <div className='card-body'>
-        <h2>Create Deck</h2>
+
+      <h2>Create Deck</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -74,13 +65,11 @@ function CreateDeck() {
         <button
           type="button"
           className="btn btn-secondary ml-2"
-          onClick={handleCancel}
+          onClick={() => history.push("/")}
         >
           Cancel
         </button>
-        /</form>
-      </div>
-    </div>
+      </form>
     </div>
   );
 }
