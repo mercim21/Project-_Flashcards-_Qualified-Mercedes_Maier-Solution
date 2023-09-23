@@ -23,6 +23,24 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
+    },
+    {
+      "front": "what is a string ",
+      "back": "This is a sequence of text known as a string. To signify that the value is a string, enclose it in single or double quote marks.",
+      "deckId": 3,
+      "id": 6
+    },
+    {
+      "front": "what is an object ",
+      "back": "This can be anything. Everything in JavaScript is an object and can be stored in a variable. Keep this in mind as you learn.",
+      "deckId": 3,
+      "id": 7
+    },
+    {
+      "front": "what is an array ",
+      "back": "This is a structure that allows you to store multiple values in a single reference.",
+      "deckId": 3,
+      "id": 8
     }
   ]
 }

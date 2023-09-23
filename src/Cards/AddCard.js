@@ -80,13 +80,13 @@ const handleSubmit = async (event) => {
             </nav>
             <h3>{deck.name}: Add Card</h3>
             <div className="card-info">
-          <CardForm
-            card = {card}
-            handleChange={handleChange}
-            handleSubmit={handleChange}
-            buttonGrayText={'Done'}
-            buttonBlueText={'Save'}
-            />
+            <CardForm
+  card={card}
+  handleChange={handleChange}
+  handleSubmit={handleSubmit} // Use handleSubmit here, not handleChange
+  buttonGrayText={'Done'}
+  buttonBlueText={'Save'}
+/>
             </div>
         </div>
     );
