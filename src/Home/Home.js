@@ -30,10 +30,9 @@ function Home() {
 
   return (
     <div className='container'>
-      <Link className='btn btn-secondary mb-2' to='/decks/new'>
-        <i className='fa-solid fa-plus' />
-        <span className='ml-1'>Create Deck</span>
-      </Link>
+<Link className='btn btn-secondary mb-2' to='/decks/new'>
+  <i className='fas fa-plus' /> Create Deck
+</Link>
       <div className='card-deck'>
         {decks.map((deck) => (
           <div className='card cardstyle' key={deck.id}>
