@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createDeck } from "../utils/api/index";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function CreateDeck() {
   const history = useHistory();
@@ -59,9 +61,9 @@ function CreateDeck() {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Create
-        </button>
+        <button type="submit" className="btn btn-primary custom-button">
+  <FontAwesomeIcon icon={faPlus} /> Create Deck
+</button>
         <button
           type="button"
           className="btn btn-secondary ml-2"
