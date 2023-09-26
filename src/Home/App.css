@@ -19,7 +19,8 @@
     flex-direction: column !important;
    
   }
-  .custom-button {
-    background-color: blue;
-    color: white; /* Text color */
+  .create-deck-button {
+    background-color: rgb(128, 0, 102);
+    color: white;
+    /* Add any other styles you want here */
   }

@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { listDecks, deleteDeck } from '../utils/api/index';
 import "../Home/App.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
   const [decks, setDecks] = useState([]);
   const history = useHistory();
+  const [isCreatingDeck, setIsCreatingDeck] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,8 +33,12 @@ function Home() {
 
   return (
     <div className='container'>
-<Link className='btn btn-secondary mb-2' to='/decks/new'>
-  <i className='fas fa-plus' /> Create Deck
+<Link
+  className={`btn btn-secondary mb-2 ${isCreatingDeck ? 'create-deck-button' : ''}`}
+  to={isCreatingDeck ? '/' : '/decks/new'}
+  onClick={() => setIsCreatingDeck(!isCreatingDeck)}
+>
+  <FontAwesomeIcon icon={isCreatingDeck ? faTimes : faPlus} /> {isCreatingDeck ? ' Cancel' : ' Create Deck'}
 </Link>
       <div className='card-deck'>
         {decks.map((deck) => (
@@ -54,11 +61,11 @@ function Home() {
                   <span className='ml-1'>Study</span>
                 </Link>
                 <button
-                 className='btn btn-danger float-right'
-                   onClick={() => handleDeleteDeck(deck.id)}
-                   >
-                   <span>Delete</span> {/* Add the "Delete" text here */}
-                      <i className='fa-solid fa-trash-can' />
+                  className='btn btn-danger float-right'
+                  onClick={() => handleDeleteDeck(deck.id)}
+                >
+                  <span>Delete</span> {/* Add the "Delete" text here */}
+                  <i className='fa-solid fa-trash-can' />
                 </button>
               </div>
             </div>
